@@ -6,6 +6,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,4 +14,17 @@ body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
+  background: #360033; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #cc5333,
+    #360033,
+    #1d2671
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #cc5333,
+    #360033,
+    #1d2671
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
