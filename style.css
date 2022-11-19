@@ -11,8 +11,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
   margin: 0;
-  background: #360033; /* fallback for old browsers */
+  background: #360033;
+  background-repeat: no-repeat; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to bottom,
     #cc5333,
