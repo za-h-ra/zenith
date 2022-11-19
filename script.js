@@ -1,7 +1,7 @@
 const API_URL = `https://api.le-systeme-solaire.net/rest/bodies/`;
 
-const getSolarData = async () => {
-  return await fetch(API_URL)
+const getSolarData = () => {
+  return fetch(API_URL)
     .then((res) => res.json())
     .then((data) => {
       // Get data from the API
@@ -35,6 +35,16 @@ const getSolarData = async () => {
     });
 };
 
-getSolarData().then((solarData) => {
-  console.log(solarData);
+// RENDER TO HTML
+
+// const currentName = document.querySelector("[data-current-name]");
+
+// const displaySolarData = (data) => {
+//   console.log(data);
+// };
+
+let solarIndex;
+
+getSolarData().then((data) => {
+  console.log(data);
 });
