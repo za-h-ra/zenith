@@ -1,13 +1,13 @@
 const API_URL = `https://api.le-systeme-solaire.net/rest/bodies/`;
 
 const getSolarData = async () => {
-  await fetch(API_URL)
+  return await fetch(API_URL)
     .then((res) => res.json())
     .then((data) => {
       // Get data from the API
       const { bodies } = data;
 
-      bodies.map(
+      return bodies.map(
         ({
           name,
           englishName,
@@ -19,14 +19,22 @@ const getSolarData = async () => {
           sideralRotation,
           aroundPlanet,
         }) => {
-          console.log(
-            `${name}, ${isPlanet}, ${gravity}, "AROUND PLANET:" ${
-              aroundPlanet === null ? "" : aroundPlanet.planet
-            }`
-          );
+          return {
+            name,
+            englishName,
+            isPlanet,
+            gravity,
+            density,
+            semimajorAxis,
+            sideralOrbit,
+            sideralRotation,
+            aroundPlanet,
+          };
         }
       );
     });
 };
 
-getSolarData();
+getSolarData().then((solarData) => {
+  console.log(solarData);
+});
